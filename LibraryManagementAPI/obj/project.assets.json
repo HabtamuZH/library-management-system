@@ -1578,11 +1578,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/habtamu/Downloads/library-management-system-updated/library-management-system/LibraryManagementAPI/LibraryManagementAPI.csproj",
+      "projectUniqueName": "/home/habtamu/Projects/library-management-system/LibraryManagementAPI/LibraryManagementAPI.csproj",
       "projectName": "LibraryManagementAPI",
-      "projectPath": "/home/habtamu/Downloads/library-management-system-updated/library-management-system/LibraryManagementAPI/LibraryManagementAPI.csproj",
+      "projectPath": "/home/habtamu/Projects/library-management-system/LibraryManagementAPI/LibraryManagementAPI.csproj",
       "packagesPath": "/home/habtamu/.nuget/packages/",
-      "outputPath": "/home/habtamu/Downloads/library-management-system-updated/library-management-system/LibraryManagementAPI/obj/",
+      "outputPath": "/home/habtamu/Projects/library-management-system/LibraryManagementAPI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/habtamu/.nuget/NuGet/NuGet.Config"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AKJNwgKSRCOhJ/N90NWrydYQYnURM1jo4FYzLNKv/LP93XC2XALM7urQ+RzgP/KEWQbDauEkCrlQpI0ZEPvNRg==",
+  "dgSpecHash": "wnZfkVia9lwKsXYJYyOR/2nJUNB1IEOboBjY581a4geeX8OHe9JvSgkL9olvQ6ovcEMyGBfGr8Jo/hyLfoWOzw==",
   "success": true,
-  "projectFilePath": "/home/habtamu/Downloads/library-management-system-updated/library-management-system/LibraryManagementAPI/LibraryManagementAPI.csproj",
+  "projectFilePath": "/home/habtamu/Projects/library-management-system/LibraryManagementAPI/LibraryManagementAPI.csproj",
   "expectedPackageFiles": [
     "/home/habtamu/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/home/habtamu/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
