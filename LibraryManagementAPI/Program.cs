@@ -10,14 +10,14 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllers();
 
-// Add Entity Framework
+// Configure EF Core with SQLite
 builder.Services.AddDbContext<LibraryContext>(options =>
-    options.UseInMemoryDatabase("LibraryManagementDB"));
+    options.UseSqlite("Data Source=library.db"));
 
-// Add AutoMapper
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+// Configure AutoMapper
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
-// Add JWT Authentication
+// Configure JWT Authentication
 var jwtSettings = builder.Configuration.GetSection("JwtSettings");
 var secretKey = jwtSettings["SecretKey"] ?? "YourSuperSecretKeyThatIsAtLeast32CharactersLong!";
 
@@ -36,7 +36,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
-// Add CORS
+// Configure CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
@@ -47,20 +47,20 @@ builder.Services.AddCors(options =>
     });
 });
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+// Swagger setup
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Use Swagger in development
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-// Use CORS
+// Middleware pipeline
 app.UseCors("AllowAll");
 
 app.UseAuthentication();
@@ -68,7 +68,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-// Initialize database
+// Ensure database is created (optional if using migrations)
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<LibraryContext>();
@@ -76,4 +76,3 @@ using (var scope = app.Services.CreateScope())
 }
 
 app.Run("http://0.0.0.0:5000");
-
